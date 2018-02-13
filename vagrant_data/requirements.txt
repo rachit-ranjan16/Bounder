@@ -1,0 +1,11 @@
+matplotlib
+scipy
+sklearn
+jupyter
+seaborn
+tensorflow
+keras
+pandas
+cython
+opencv-python
+easydict
