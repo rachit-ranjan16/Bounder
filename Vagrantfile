@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   #config.vm.box = "ubuntu/xenial64"
   config.vm.define :RCNN do |rCnn|
-    rCnn.vm.box = "ffuenf/ubuntu-17.10-server-amd64"
+    rCnn.vm.box = "ubuntu/xenial64"
   end
   #config.ssh.username = "ubuntu"
   #config.ssh.password = "somePass"
