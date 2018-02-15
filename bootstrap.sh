@@ -24,7 +24,7 @@ echo "Install Caffe Dependencies"
 echo "----------------------------"
 sudo apt-get -y -q install --no-install-recommends libboost-all-dev
 sudo apt-get -y -q install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev \
-libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler libopenblas-dev libatlas-base-dev
+libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler libopenblas-dev libatlas-base-dev python-tk
 echo "----------------------------"
 echo "Install pip"
 echo "----------------------------"
@@ -32,7 +32,6 @@ sudo apt-get -y -q install python-pip
 echo "----------------------------"
 echo "Get Python Dependencies"
 echo "----------------------------"
-pip install scikit-image protobuf
 pip install -r /vagrant_data/requirements.txt
 echo "----------------------------"
 echo "Clone Faster RCNN Code"
