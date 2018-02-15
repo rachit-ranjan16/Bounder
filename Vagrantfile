@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   #config.vm.box = "ubuntu/xenial64"
   config.vm.define :RCNN do |rCnn|
-    rCnn.vm.box = "ffuenf/ubuntu-17.10-server-amd64"
+    rCnn.vm.box = "ubuntu/xenial64"
   end
   #config.ssh.username = "ubuntu"
   #config.ssh.password = "somePass"
@@ -47,8 +47,8 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-   config.vm.network :forwarded_port, guest: 8080, host: 8776, host_ip: "127.0.0.1"
-   config.vm.network :forwarded_port, guest: 8888, host: 8778 , host_ip: "127.0.0.1"
+   #config.vm.network :forwarded_port, guest: 8080, host: 8777, host_ip: "127.0.0.1"
+   #config.vm.network :forwarded_port, guest: 8888, host: 8778 , host_ip: "127.0.0.1"
    config.vm.synced_folder "vagrant_data", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various

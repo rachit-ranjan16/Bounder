@@ -2,17 +2,17 @@ echo "----------------------------"
 echo "Updating"
 echo "----------------------------"
 sudo apt-get -y -q update
-  echo "----------------------------"
-  echo "Change File Encodings to Unix"
-  echo "----------------------------"
-  sudo apt-get -y -q install dos2unix
-  dos2unix /vagrant_data/*
+echo "----------------------------"
+echo "Change File Encodings to Unix"
+echo "----------------------------"
+sudo apt-get -y -q install dos2unix
+dos2unix vagrant_data/*
 echo "----------------------------"
 echo "Install and Configture vim"
 echo "----------------------------"
 sudo apt-get -y -q install vim
-sudo cp /vagrant_data/.vimrc /home/ubuntu
-sudo cp /vagrant_data/.vimrc /root/
+sudo cp vagrant_data/.vimrc /home/ubuntu
+sudo cp vagrant_data/.vimrc /root/
 echo "----------------------------"
 echo "Install and configure git"
 echo "----------------------------"
@@ -24,7 +24,7 @@ echo "Install Caffe Dependencies"
 echo "----------------------------"
 sudo apt-get -y -q install --no-install-recommends libboost-all-dev
 sudo apt-get -y -q install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev \
-libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler libopenblas-dev libatlas-base-dev
+libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler
 echo "----------------------------"
 echo "Install pip"
 echo "----------------------------"
@@ -33,7 +33,7 @@ echo "----------------------------"
 echo "Get Python Dependencies"
 echo "----------------------------"
 pip install scikit-image protobuf
-pip install -r /vagrant_data/requirements.txt
+pip install -r vagrant_data/requirements.txt
 echo "----------------------------"
 echo "Clone Faster RCNN Code"
 echo "----------------------------"
@@ -41,12 +41,11 @@ git clone --recursive https://github.com/rbgirshick/py-faster-rcnn.git
 echo "----------------------------"
 echo "Prep to Build Cython Lib Modules"
 echo "----------------------------"
-sudo cp /vagrant_data/libSetup.py py-faster-rcnn/lib/setup.py
+#sudo cp vagrant_data/libSetup.py py-faster-rcnn/lib/setup.py
 echo "----------------------------"
 echo "Prep to Build Caffe"
 echo "----------------------------"
-sudo cp /vagrant_data/Makefile.config py-faster-rcnn/caffe-fast-rcnn/Makefile.config
-sudo cp /vagrant_data/Makefile py-faster-rcnn/caffe-fast-rcnn/Makefile
+#sudo cp vagrant_data/Makefile.config py-faster-rcnn/caffe-fast-rcnn/Makefile.config
 echo "----------------------------"
 echo "Create Soft Links"
 echo "----------------------------"
@@ -55,10 +54,10 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libhdf5_serial_hl.so.10.0.2 /usr/lib/x86_64
 echo "----------------------------"
 echo "Build lib"
 echo "----------------------------"
-cd py-faster-rcnn/lib/
-sudo make
+#cd py-faster-rcnn/lib/
+#sudo make
 echo "----------------------------"
 echo "Build Caffe"
 echo "----------------------------"
-cd ../caffe-fast-rcnn
-sudo make && make pycaffe
+#cd ../caffe-fast-rcnn
+#sudo make && make pycaffe
