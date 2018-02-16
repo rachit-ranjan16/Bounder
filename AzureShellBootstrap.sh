@@ -3,6 +3,10 @@ echo "Updating"
 echo "----------------------------"
 sudo apt-get -y -q update
 echo "----------------------------"
+echo "Remove Anaconda"
+echo "----------------------------"
+sudo rm -rf /anaconda* 
+echo "----------------------------"
 echo "Change File Encodings to Unix"
 echo "----------------------------"
 sudo apt-get -y -q install dos2unix
