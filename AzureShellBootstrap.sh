@@ -2,17 +2,23 @@ echo "----------------------------"
 echo "Updating"
 echo "----------------------------"
 sudo apt-get -y -q update
-  echo "----------------------------"
-  echo "Change File Encodings to Unix"
-  echo "----------------------------"
-  sudo apt-get -y -q install dos2unix
-  dos2unix /vagrant_data/*
+echo "----------------------------"
+echo "Change File Encodings to Unix"
+echo "----------------------------"
+sudo apt-get -y -q install dos2unix
+dos2unix tools/*
 echo "----------------------------"
 echo "Install and Configture vim"
 echo "----------------------------"
 sudo apt-get -y -q install vim
-sudo cp /vagrant_data/.vimrc /home/ubuntu
-sudo cp /vagrant_data/.vimrc /root/
+sudo cp tools/.vimrc /home/rachit/
+echo "----------------------------"
+echo "Setup Remote Connection Dependencies"
+echo "----------------------------"
+sudo apt-get install -y -q xfce4
+sudo apt-get install -y -q xrdp
+echo xfce4-session >~/.xsession
+sudo service xrdp restart
 echo "----------------------------"
 echo "Install and configure git"
 echo "----------------------------"
@@ -32,20 +38,16 @@ sudo apt-get -y -q install python-pip
 echo "----------------------------"
 echo "Get Python Dependencies"
 echo "----------------------------"
-pip install -r /vagrant_data/requirements.txt
+pip install -r tools/requirements.txt
 echo "----------------------------"
 echo "Clone Faster RCNN Code"
 echo "----------------------------"
 git clone --recursive https://github.com/rbgirshick/py-faster-rcnn.git
 echo "----------------------------"
-echo "Prep to Build Cython Lib Modules"
-echo "----------------------------"
-sudo cp /vagrant_data/libSetup.py py-faster-rcnn/lib/setup.py
-echo "----------------------------"
 echo "Prep to Build Caffe"
 echo "----------------------------"
-sudo cp /vagrant_data/Makefile.config py-faster-rcnn/caffe-fast-rcnn/Makefile.config
-sudo cp /vagrant_data/Makefile py-faster-rcnn/caffe-fast-rcnn/Makefile
+sudo cp tools/MakefileAzure.config py-faster-rcnn/caffe-fast-rcnn/Makefile.config
+sudo cp tools/MakefileA zure py-faster-rcnn/caffe-fast-rcnn/Makefile
 echo "----------------------------"
 echo "Create Soft Links"
 echo "----------------------------"
@@ -61,3 +63,10 @@ echo "Build Caffe"
 echo "----------------------------"
 cd ../caffe-fast-rcnn
 sudo make && make pycaffe
+echo "----------------------------"
+echo "Remote Connection using RDP"
+echo "----------------------------"
+echo "Azure login using `azure login` and follow the prompts"
+echo "Open Port 3389 for RDP requests"
+echo "az vm open-port --resource-group myResourceGroup --name myVM --port 3389"
+echo "Use Windows RDP to Connect to this Linux Node using the xfce4 gui"
