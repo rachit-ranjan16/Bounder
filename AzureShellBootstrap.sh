@@ -70,7 +70,7 @@ sudo make && make pycaffe
 echo "----------------------------"
 echo "Remote Connection using RDP"
 echo "----------------------------"
-echo "Azure login using `azure login` and follow the prompts"
+echo "Azure login using azure login and follow the prompts"
 echo "Open Port 3389 for RDP requests"
 echo "az vm open-port --resource-group myResourceGroup --name myVM --port 3389"
 echo "Use Windows RDP to Connect to this Linux Node using the xfce4 gui"
