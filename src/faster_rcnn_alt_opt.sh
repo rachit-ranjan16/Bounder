@@ -27,7 +27,7 @@ EXTRA_ARGS_SLUG=${EXTRA_ARGS// /_}
 TRAIN_IMDB="voc_2007_trainval"
 TEST_IMDB="voc_2007_test"
 PT_DIR="pascal_voc"
-ITERS=10000
+ITERS=40000
 #    ;;
 #  coco)
 #    echo "Not implemented: use experiments/scripts/faster_rcnn_end2end.sh for coco"
