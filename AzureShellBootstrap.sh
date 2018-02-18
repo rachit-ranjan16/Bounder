@@ -5,7 +5,7 @@ sudo apt-get -y -q update
 echo "----------------------------"
 echo "Remove Anaconda"
 echo "----------------------------"
-sudo rm -rf /anaconda* 
+sudo rm -rf /anaconda*
 echo "----------------------------"
 echo "Change File Encodings to Unix"
 echo "----------------------------"
@@ -51,7 +51,7 @@ echo "----------------------------"
 echo "Prep to Build Caffe"
 echo "----------------------------"
 sudo cp tools/MakefileAzure.config py-faster-rcnn/caffe-fast-rcnn/Makefile.config
-sudo cp tools/MakefileA zure py-faster-rcnn/caffe-fast-rcnn/Makefile
+sudo cp tools/MakefileAzure py-faster-rcnn/caffe-fast-rcnn/Makefile
 echo "----------------------------"
 echo "Create Soft Links"
 echo "----------------------------"
